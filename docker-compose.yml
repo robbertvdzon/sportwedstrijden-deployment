@@ -1,0 +1,7 @@
+msw:
+  build: msw
+  ports:
+    - "8080:8080"
+  volumes:
+    - ./maven_repo:/root/.m2
+    - ./portlet_data:/portlet_data
