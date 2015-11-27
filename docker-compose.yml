@@ -1,7 +1,32 @@
-msw:
-  build: msw
+edgeserver:
+  build: docker/edgeserver
   ports:
-    - "8080:8080"
+    - "8082:8082"
+  links:
+    - storageserver
+    - emailservice
   volumes:
-    - ./maven_repo:/root/.m2
-    - ./portlet_data:/portlet_data
+    - ./data/edgeserver_data:/edgeserver_data
+eventservice:
+  build: docker/eventservice
+  ports:
+    - "8084:8084"
+  links:
+    - storageserver
+    - emailservice
+  volumes:
+    - ./data/emailservice_data:/eventservice_data
+storageserver:
+  build: docker/storageserver
+  ports:
+    - "8081:8081"
+  volumes:
+    - ./data/maven_repo:/root/.m2
+    - ./data/storageserver_data:/storageserver_data
+emailservice:
+  build: docker/emailservice
+  ports:
+    - "8083:8083"
+  volumes:
+    - ./data/emailservice_data:/emailservice_data
+

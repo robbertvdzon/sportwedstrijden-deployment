@@ -1,0 +1,4 @@
+.idea
+maven_repo/*
+**/*.jar
+**/*.db
