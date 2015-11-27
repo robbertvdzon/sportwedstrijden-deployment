@@ -15,7 +15,7 @@ eventservice:
     - storageserver
     - emailservice
   volumes:
-    - ./data/emailservice_data:/eventservice_data
+    - ./data/eventservice_data:/eventservice_data
 storageserver:
   build: docker/storageserver
   ports:
