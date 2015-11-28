@@ -7,6 +7,9 @@ curl http://www.vdzon.com/_jar/download.php?file=edgeserver.jar --output data/ed
 curl http://www.vdzon.com/_jar/download.php?file=storageserver.jar --output data/storageserver_data/storageserver.jar
 curl http://www.vdzon.com/_jar/download.php?file=emailservice.jar --output data/emailservice_data/emailservice.jar
 curl http://www.vdzon.com/_jar/download.php?file=eventservice.jar --output data/eventservice_data/eventservice.jar
+curl http://www.vdzon.com/_jar/download.php?file=importmswservice.jar --output data/importmswservice_data/importmswservice.jar
+# copy the local properties to importmswservice
+cp /workspace/mswimport.properties /workspace/sportwedstrijden-deployment/data/importmswservice_data/application.properties
 
 sleep 10
 /usr/local/bin/docker-compose build
