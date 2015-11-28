@@ -14,6 +14,12 @@ eventservice:
     - emailservice
   volumes:
     - ./data/eventservice_data:/eventservice_data
+importmswservice:
+  build: docker/importmswservice
+  links:
+    - storageserver
+  volumes:
+    - ./data/importmswservice_data:/importmswservice_data
 storageserver:
   build: docker/storageserver
   volumes:
